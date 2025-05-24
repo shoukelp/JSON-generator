@@ -1,4 +1,4 @@
-/* index.css */
+/* Base styles */
 body {
   font-family: sans-serif;
   background: #f9f9f9;
@@ -6,14 +6,17 @@ body {
   padding: 0;
 }
 
+/* Container menyatu penuh */
 .container {
-  max-width: 800px;
-  margin: auto;
+  width: 100%;
+  min-height: 100vh;
   padding: 20px;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 0;
+  box-sizing: border-box;
 }
 
+/* Heading & Description */
 .description {
   margin-top: 0;
   font-size: 15px;
@@ -25,24 +28,6 @@ body {
   font-size: 13px;
   color: #777;
   margin-bottom: 20px;
-}
-
-.footer {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
-  text-align: center;
-  font-size: 13px;
-  color: #888;
-}
-
-.footer a {
-  color: #4caf50;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
 }
 
 /* Template Selector */
@@ -64,7 +49,7 @@ body {
   border-radius: 4px;
 }
 
-/* Input Area */
+/* Input Group (for name, uuid, version) */
 .input-group {
   display: flex;
   gap: 1rem;
@@ -80,18 +65,60 @@ body {
   border-radius: 4px;
   width: 100%;
   box-sizing: border-box;
+  height: 30px;
 }
 
+/* Version Input (no special style, reuse .input-style) */
+.version-input-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 800px;
+  display: flex;
+  align-items: stretch; /* Ubah dari center ke stretch */
+}
+
+.version-input-wrapper .input-style {
+  height: 100%;
+}
+
+.version-buttons {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.version-buttons button {
+  width: 16px;
+  height: 14px;
+  font-size: 10px;
+  line-height: 12px;
+  border: none;
+  background: none;
+  padding: 0;
+  color: #555;
+  cursor: pointer;
+}
+
+.version-buttons button:hover {
+  color: #000;
+}
+
+/* Textarea (for description, JSON output) */
 .textarea-style {
   width: 100%;
   margin-top: 10px;
   resize: vertical;
   box-sizing: border-box;
-}
-
-/* JSON Output */
-.json-display {
-  margin-top: 30px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 80px;
+  font-family: inherit;
 }
 
 .textarea-container {
@@ -111,7 +138,25 @@ body {
   min-height: 300px;
 }
 
-/* Copy Button */
+/* Validation Styles */
+.input-error {
+  border-color: #e74c3c !important;
+}
+
+.error-text {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.error-text-group {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Buttons */
 .copy-button {
   position: absolute;
   top: 10px;
@@ -129,7 +174,6 @@ body {
   background-color: #ddd;
 }
 
-/* Download Button */
 .download-button {
   margin-top: 20px;
   padding: 8px 16px;
@@ -144,4 +188,23 @@ body {
 
 .download-button:hover {
   background-color: #45a049;
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+.footer a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }

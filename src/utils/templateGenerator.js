@@ -46,7 +46,7 @@ const generateTemplate = (type, options = {}) => {
         ]
       };
 
-    // ... block, item, etc.
+    // definitions
     case "block":
       return {
         format_version: "1.16.100",
