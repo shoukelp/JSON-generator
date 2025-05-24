@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/manifest-generator/static/js/main.adf21291.js",
+    "index.html": "/manifest-generator/index.html",
+    "main.adf21291.js.map": "/manifest-generator/static/js/main.adf21291.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.adf21291.js"
+  ]
+}
