@@ -11,7 +11,7 @@ const DownloadButton = ({ jsonOutput }) => {
   };
 
   return (
-    <button onClick={handleDownload} style={{ marginTop: 20 }}>
+    <button onClick={handleDownload} className="download-button">
       Download JSON
     </button>
   );

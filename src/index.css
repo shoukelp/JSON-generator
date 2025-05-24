@@ -1,0 +1,147 @@
+/* index.css */
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.description {
+  margin-top: 0;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.source-note {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+.footer a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Template Selector */
+.template-selector {
+  margin-bottom: 20px;
+}
+
+.label-style {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.select-style {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Input Area */
+.input-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.input-style {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.textarea-style {
+  width: 100%;
+  margin-top: 10px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+/* JSON Output */
+.json-display {
+  margin-top: 30px;
+}
+
+.textarea-container {
+  position: relative;
+  width: 100%;
+}
+
+.output-textarea {
+  width: 100%;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  box-sizing: border-box;
+  min-height: 300px;
+}
+
+/* Copy Button */
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+  background-color: #ddd;
+}
+
+/* Download Button */
+.download-button {
+  margin-top: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.download-button:hover {
+  background-color: #45a049;
+}
