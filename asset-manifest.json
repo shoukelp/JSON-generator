@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/JSON-generator/static/css/main.2aa6005a.css",
-    "main.js": "/JSON-generator/static/js/main.5531fae6.js",
+    "main.js": "/JSON-generator/static/js/main.fb1189fe.js",
     "index.html": "/JSON-generator/index.html",
     "main.2aa6005a.css.map": "/JSON-generator/static/css/main.2aa6005a.css.map",
-    "main.5531fae6.js.map": "/JSON-generator/static/js/main.5531fae6.js.map"
+    "main.fb1189fe.js.map": "/JSON-generator/static/js/main.fb1189fe.js.map"
   },
   "entrypoints": [
     "static/css/main.2aa6005a.css",
-    "static/js/main.5531fae6.js"
+    "static/js/main.fb1189fe.js"
   ]
 }
