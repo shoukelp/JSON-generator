@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/manifest-generator/static/css/main.157baf5b.css",
-    "main.js": "/manifest-generator/static/js/main.52fe279e.js",
-    "index.html": "/manifest-generator/index.html",
-    "main.157baf5b.css.map": "/manifest-generator/static/css/main.157baf5b.css.map",
-    "main.52fe279e.js.map": "/manifest-generator/static/js/main.52fe279e.js.map"
+    "main.css": "/JSON-generator/static/css/main.2aa6005a.css",
+    "main.js": "/JSON-generator/static/js/main.5531fae6.js",
+    "index.html": "/JSON-generator/index.html",
+    "main.2aa6005a.css.map": "/JSON-generator/static/css/main.2aa6005a.css.map",
+    "main.5531fae6.js.map": "/JSON-generator/static/js/main.5531fae6.js.map"
   },
   "entrypoints": [
-    "static/css/main.157baf5b.css",
-    "static/js/main.52fe279e.js"
+    "static/css/main.2aa6005a.css",
+    "static/js/main.5531fae6.js"
   ]
 }
