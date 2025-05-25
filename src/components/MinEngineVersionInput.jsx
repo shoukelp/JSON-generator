@@ -18,7 +18,7 @@ const MinEngineVersionInput = ({ value, onChange, versions, className = "" }) =>
         value={versions.includes(value) ? value : ""}
         onChange={handleSelectChange}
       >
-        <option value="">Pilih Versi Minecraft</option>
+        <option value="">Minecraft Version</option>
         {versions.map((ver) => (
           <option key={ver} value={ver}>
             {ver}
@@ -29,7 +29,7 @@ const MinEngineVersionInput = ({ value, onChange, versions, className = "" }) =>
         type="text"
         value={value}
         onChange={handleInputChange}
-        placeholder="Atau isi manual"
+        placeholder="Or input here"
         className="custom-input"
       />
     </div>

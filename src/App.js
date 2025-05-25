@@ -18,7 +18,7 @@ import sound from "./templates/sound";
 import { validateVersionFormat, convertDescription } from "./utils";
 
 const templates = [
-  { key: "", label: "Pilih Template" },
+  { key: "", label: "Select Template" },
   { key: "manifest", label: "Manifest (Resource, Behaviour, Skin Pack)", fn: manifest },
   { key: "block", label: "Block Definition", fn: block },
   { key: "item", label: "Item Definition", fn: item },
@@ -33,7 +33,25 @@ const inputFieldsByTemplate = {
   sound: [],
 };
 
-const minEngineVersions = ["1.16.100", "1.17.0", "1.18.0", "1.19.0", "1.20.0"];
+const minEngineVersions = [
+  // 2020
+  "1.14.60", "1.16.0", "1.16.20", "1.16.40", "1.16.100", "1.16.200",
+
+  // 2021
+  "1.17.0", "1.17.10", "1.17.30", "1.18.0",
+
+  // 2022
+  "1.18.10", "1.18.30", "1.19.0", "1.19.10", "1.19.50",
+
+  // 2023
+  "1.19.60", "1.19.70", "1.20.0", "1.20.30", "1.20.50",
+
+  // 2024
+  "1.21.0", "1.21.20", "1.21.40", "1.21.60",
+
+  // 2025
+  "1.21.70", "1.21.80"
+];
 
 function App() {
   const [templateKey, setTemplateKey] = useState("");
@@ -100,15 +118,15 @@ function App() {
       if (key === "version") {
         newErrors.version = validateVersionFormat(value)
           ? null
-          : "Format versi harus x.y.z (misal 1.0.0).";
+          : "The version format should be x.y.z (eg 1.0.0).";
       } else if (key === "name") {
-        newErrors.name = value.trim() ? null : "Nama tidak boleh kosong.";
+        newErrors.name = value.trim() ? null : "Name cannot be empty.";
       } else if (key === "minEngineVersion") {
         newErrors.minEngineVersion = minEngineVersions.includes(value)
           ? null
-          : "Min engine version wajib dipilih.";
+          : "Min engine version must be selected.";
       } else if (key === "description") {
-        newErrors.description = value.trim() ? null : "Deskripsi tidak boleh kosong.";
+        newErrors.description = value.trim() ? null : "Description must not be empty.";
       }
       return newErrors;
     });

@@ -23,7 +23,7 @@ const Inputs = ({ data, onChange, errors, minEngineVersions, inputFields, select
       <>
         <input
           type="text"
-          placeholder="Nama"
+          placeholder="Name"
           value={data.name || ""}
           onChange={(e) => onChange("name", e.target.value)}
           style={inputStyle}
@@ -36,7 +36,7 @@ const Inputs = ({ data, onChange, errors, minEngineVersions, inputFields, select
       <>
         <input
           type="text"
-          placeholder="Versi (x.y.z)"
+          placeholder="Version"
           value={data.version || ""}
           onChange={(e) => onChange("version", e.target.value)}
           pattern="[0-9]+\.[0-9]+\.[0-9]+"
@@ -52,7 +52,7 @@ const Inputs = ({ data, onChange, errors, minEngineVersions, inputFields, select
         onChange={(e) => onChange("packType", e.target.value)}
         className={`custom-select ${selectClassName || ""}`}
       >
-        <option value="">Pilih Jenis Pack</option>
+        <option value="">Pack Type</option>
         <option value="data">Behaviour Pack</option>
         <option value="resources">Resource Pack</option>
         <option value="skin_pack">Skin Pack</option>
@@ -74,7 +74,7 @@ const Inputs = ({ data, onChange, errors, minEngineVersions, inputFields, select
     {inputFields.includes("description") && (
       <>
         <textarea
-          placeholder="Deskripsi (gunakan § dan baris baru)"
+          placeholder="Description (supports formatting codes and new lines)"
           value={data.description || ""}
           rows={4}
           onChange={(e) => onChange("description", e.target.value)}
