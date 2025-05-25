@@ -1,193 +1,145 @@
-/* Base styles */
+/* Reset dasar dan layout utama */
 body {
   font-family: sans-serif;
-  background: #f9f9f9;
   margin: 0;
-  padding: 0;
-}
-
-/* Container menyatu penuh */
-.container {
-  width: 100%;
-  min-height: 100vh;
   padding: 20px;
-  background: #fff;
-  border-radius: 0;
-  box-sizing: border-box;
+  background: #f9f9f9;
+  color: #222;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Heading & Description */
-.description {
-  margin-top: 0;
-  font-size: 15px;
-  color: #555;
-  line-height: 1.5;
-}
-
-.source-note {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 20px;
-}
-
-/* Template Selector */
-.template-selector {
-  margin-bottom: 20px;
-}
-
-.label-style {
-  display: block;
-  margin-bottom: 5px;
+/* Judul dan deskripsi */
+h1 {
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.select-style {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
+.description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Link informasi */
+.link-row {
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.link-row a {
+  color: #2979ff;
+  text-decoration: none;
+}
+
+.link-row a:hover {
+  text-decoration: underline;
+}
+
+/* Input, select, dan textarea umum */
+input[type="text"],
+select,
+textarea,
+.custom-input,
+.select,
+.custom-select {
+  padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-
-/* Input Group (for name, uuid, version) */
-.input-group {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
   margin-bottom: 10px;
 }
 
-.input-style {
-  flex: 1;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-  height: 30px;
-}
-
-/* Version Input (no special style, reuse .input-style) */
-.version-input-wrapper {
-  position: relative;
-  flex: 1;
-  max-width: 800px;
-  display: flex;
-  align-items: stretch; /* Ubah dari center ke stretch */
-}
-
-.version-input-wrapper .input-style {
-  height: 100%;
-}
-
-.version-buttons {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.version-buttons button {
-  width: 16px;
-  height: 14px;
-  font-size: 10px;
-  line-height: 12px;
-  border: none;
-  background: none;
-  padding: 0;
-  color: #555;
+/* Select khusus (dengan icon dropdown custom) */
+.custom-select {
+  background-color: white;
+  color: black;
+  padding-right: 30px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3e%3cpath%20fill='none'%20stroke='%23333'%20stroke-width='1.5'%20d='M0%200l2%202%202-2'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 10px 10px;
   cursor: pointer;
 }
 
-.version-buttons button:hover {
-  color: #000;
+.custom-select:focus {
+  outline: none;
+  border-color: #2979ff;
+  box-shadow: 0 0 3px #2979ff;
 }
 
-/* Textarea (for description, JSON output) */
-.textarea-style {
-  width: 100%;
-  margin-top: 10px;
-  resize: vertical;
-  box-sizing: border-box;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
+/* Tombol umum */
+button,
+.uuid-button {
+  padding: 8px 12px;
   border-radius: 4px;
-  min-height: 80px;
+  border: none;
   font-family: inherit;
-}
-
-.textarea-container {
-  position: relative;
-  width: 100%;
-}
-
-.output-textarea {
-  width: 100%;
-  padding: 10px;
-  font-family: monospace;
-  font-size: 14px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  resize: vertical;
-  box-sizing: border-box;
-  min-height: 300px;
-}
-
-/* Validation Styles */
-.input-error {
-  border-color: #e74c3c !important;
-}
-
-.error-text {
-  color: #e74c3c;
-  font-size: 12px;
-  margin-top: 2px;
-}
-
-.error-text-group {
-  color: #e74c3c;
-  font-size: 12px;
-  margin-top: 6px;
-  line-height: 1.4;
-}
-
-/* Buttons */
-.copy-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 4px 8px;
-  font-size: 12px;
-  background-color: #eee;
-  border: none;
-  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease;
+  user-select: none;
 }
 
-.copy-button:hover {
-  background-color: #ddd;
-}
-
-.download-button {
-  margin-top: 20px;
-  padding: 8px 16px;
-  font-size: 14px;
-  background-color: #4caf50;
+button {
+  background-color: #2979ff;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
 }
 
-.download-button:hover {
-  background-color: #45a049;
+button:hover {
+  background-color: #1565c0;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Tombol UUID agar full-width */
+.uuid-button {
+  display: block;
+  width: 100%;
+}
+
+/* Output JSON */
+.json-output {
+  background-color: white;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: monospace;
+  white-space: pre;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+
+/* Tombol Copy dan Download */
+.buttons-row {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  gap: 6px;
+}
+
+.buttons-row button {
+  background-color: rgba(224, 224, 224, 0.8);
+  color: black;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+}
+
+.buttons-row button:hover {
+  background-color: rgba(192, 192, 192, 0.8);
 }
 
 /* Footer */
