@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/JSON-generator/static/css/main.2aa6005a.css",
-    "main.js": "/JSON-generator/static/js/main.fb1189fe.js",
+    "main.css": "/JSON-generator/static/css/main.cf239e60.css",
+    "main.js": "/JSON-generator/static/js/main.3aeef1a0.js",
     "index.html": "/JSON-generator/index.html",
-    "main.2aa6005a.css.map": "/JSON-generator/static/css/main.2aa6005a.css.map",
-    "main.fb1189fe.js.map": "/JSON-generator/static/js/main.fb1189fe.js.map"
+    "main.cf239e60.css.map": "/JSON-generator/static/css/main.cf239e60.css.map",
+    "main.3aeef1a0.js.map": "/JSON-generator/static/js/main.3aeef1a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.2aa6005a.css",
-    "static/js/main.fb1189fe.js"
+    "static/css/main.cf239e60.css",
+    "static/js/main.3aeef1a0.js"
   ]
 }
