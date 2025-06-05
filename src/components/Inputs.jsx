@@ -1,22 +1,6 @@
 import React from "react";
 import MinEngineVersionInput from "./MinEngineVersionInput";
 
-const inputStyle = {
-  padding: "8px",
-  border: "1px solid #ccc",
-  borderRadius: "4px",
-  width: "100%",
-  boxSizing: "border-box",
-  marginBottom: "12px",
-};
-
-const errorStyle = {
-  color: "red",
-  fontSize: "0.875rem",
-  marginTop: "-10px",
-  marginBottom: "8px",
-};
-
 const Inputs = ({ data, onChange, errors, minEngineVersions, inputFields, selectClassName }) => (
   <div>
     {inputFields.includes("name") && (
@@ -26,9 +10,9 @@ const Inputs = ({ data, onChange, errors, minEngineVersions, inputFields, select
           placeholder="Name"
           value={data.name || ""}
           onChange={(e) => onChange("name", e.target.value)}
-          style={inputStyle}
+          className="custom-input"
         />
-        {errors.name && <div style={errorStyle}>{errors.name}</div>}
+        {errors.name && <div className="input-error">{errors.name}</div>}
       </>
     )}
 
@@ -40,9 +24,9 @@ const Inputs = ({ data, onChange, errors, minEngineVersions, inputFields, select
           value={data.version || ""}
           onChange={(e) => onChange("version", e.target.value)}
           pattern="[0-9]+\.[0-9]+\.[0-9]+"
-          style={inputStyle}
+          className="custom-input"
         />
-        {errors.version && <div style={errorStyle}>{errors.version}</div>}
+        {errors.version && <div className="input-error">{errors.version}</div>}
       </>
     )}
 
@@ -67,7 +51,7 @@ const Inputs = ({ data, onChange, errors, minEngineVersions, inputFields, select
           versions={minEngineVersions}
           className={selectClassName}
         />
-        {errors.minEngineVersion && <div style={errorStyle}>{errors.minEngineVersion}</div>}
+        {errors.minEngineVersion && <div className="input-error">{errors.minEngineVersion}</div>}
       </>
     )}
 
@@ -78,9 +62,9 @@ const Inputs = ({ data, onChange, errors, minEngineVersions, inputFields, select
           value={data.description || ""}
           rows={4}
           onChange={(e) => onChange("description", e.target.value)}
-          style={inputStyle}
+          className="custom-input"
         />
-        {errors.description && <div style={errorStyle}>{errors.description}</div>}
+        {errors.description && <div className="input-error">{errors.description}</div>}
       </>
     )}
   </div>

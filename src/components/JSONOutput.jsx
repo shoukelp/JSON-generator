@@ -3,14 +3,22 @@ import React, { useState } from "react";
 const JSONOutput = ({ json }) => {
   const [copied, setCopied] = useState(false);
 
+  const formatOutput = (obj) => {
+    return JSON.stringify(obj, null, 2)
+      .replace(/§/g, "\\u00A7")
+      .replace(/\n/g, "\n");
+  };
+
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(JSON.stringify(json, null, 2));
+    const formatted = formatOutput(json);
+    await navigator.clipboard.writeText(formatted);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500); // Reset setelah 1.5 detik
+    setTimeout(() => setCopied(false), 1500);
   };
 
   const handleDownload = () => {
-    const blob = new Blob([JSON.stringify(json, null, 2)], { type: "application/json" });
+    const formatted = formatOutput(json);
+    const blob = new Blob([formatted], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -18,11 +26,10 @@ const JSONOutput = ({ json }) => {
     a.click();
     URL.revokeObjectURL(url);
   };
-  // <button onClick={handleDownload}>Download</button>
 
   return (
     <div style={{ marginTop: "1em", position: "relative" }}>
-      <pre className="json-output">{JSON.stringify(json, null, 2)}</pre>
+      <pre className="json-output">{formatOutput(json)}</pre>
       <div className="buttons-row">
         <button onClick={handleCopy}>{copied ? "Copied!" : "Copy"}</button>
       </div>
