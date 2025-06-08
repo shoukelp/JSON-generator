@@ -17,7 +17,7 @@ h1 {
 }
 
 .description {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #555;
   margin-bottom: 15px;
 }
@@ -53,9 +53,14 @@ textarea,
   margin-bottom: 10px;
 }
 
+textarea {
+  height: 250px;
+  font-size: 0.5rem;
+}
+
 .input-error {
   color: red;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   margin-top: -10px;
   margin-bottom: 8px;
 }
@@ -112,7 +117,7 @@ button:disabled {
 .json-output {
   background-color: white;
   padding: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   overflow-x: auto;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -136,7 +141,7 @@ button:disabled {
   background-color: rgba(224, 224, 224, 0.8);
   color: black;
   padding: 4px 10px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 
 .buttons-row button:hover {
@@ -159,4 +164,30 @@ button:disabled {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+.formatting-toolbar {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 0.4em;
+  padding-bottom: 0.5em;
+  scrollbar-width: thin;
+}
+
+.format-button {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 4px 8px;
+  min-width: 32px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.format-button:focus {
+  outline: 2px solid #00bbee;
 }
