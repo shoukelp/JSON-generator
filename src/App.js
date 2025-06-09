@@ -161,13 +161,19 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Minecraft JSON Generator</h1>
+      <h1>MCBE Manifest Generator</h1>
       <p className="description">
         This tool helps you create JSON files for Minecraft Bedrock{" "}
         <strong>
-          behavior packs, resource packs, blocks, items, and sound definitions
+          behavior packs, resource packs, skin packs, blocks, items, and sound definitions
         </strong>
         . You can edit the name, version, and description directly.
+      </p>
+      <p className="description">
+        This is an experimental web, created to help MCBE creators.
+      </p>
+      <p className="description">
+        Useful links: 
       </p>
       <p className="link-row">
         <a
