@@ -160,69 +160,71 @@ function App() {
       : {};
 
   return (
-    <div className="container">
-      <h1>MCBE Manifest Generator</h1>
-      <p className="description">
-        This tool helps you create JSON files for Minecraft Bedrock{" "}
-        <strong>
-          behavior packs, resource packs, skin packs, blocks, items, and sound definitions
-        </strong>
-        . You can edit the name, version, and description directly.
-      </p>
-      <p className="description">
-        This is an experimental web, created to help MCBE creators.
-      </p>
-      <p className="description">
-        Useful links: 
-      </p>
-      <p className="link-row">
-        <a
-          href="https://wiki.bedrock.dev/guide/understanding-json"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Understanding JSON
-        </a>{" "}
-        |{" "}
-        <a
-          href="https://minecraft.fandom.com/wiki/Formatting_codes"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Formatting Codes
-        </a>
-      </p>
+    <>
+      <div className="header">
+        <h1>MCBE Manifest Generator</h1>
+        <p>
+          This tool helps you create JSON files for Minecraft Bedrock{" "}
+          <strong>
+            behavior packs, resource packs, skin packs, blocks, items, and sound definitions
+          </strong>
+          . You can edit the name, version, and description directly.
+        </p>
+        <p>
+          This is an experimental web, created to help MCBE creators.
+        </p>
+        <p>Useful links:</p>
+        <p className="link-row">
+          <a
+            href="https://wiki.bedrock.dev/guide/understanding-json"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Understanding JSON
+          </a>{" "}
+          |{" "}
+          <a
+            href="https://minecraft.fandom.com/wiki/Formatting_codes"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Formatting Codes
+          </a>
+        </p>
+      </div>
 
-      <TemplateSelector
-        options={templates}
-        selected={templateKey}
-        onChange={setTemplateKey}
-        className="custom-select"
-      />
+      <div className="container">
+        <TemplateSelector
+          options={templates}
+          selected={templateKey}
+          onChange={setTemplateKey}
+          className="custom-select"
+        />
 
-      {templateKey !== "" && (
-        <>
-          <Inputs
-            data={currentInputData}
-            onChange={onChangeInput}
-            errors={{ description: errorText }}
-            minEngineVersions={minEngineVersions}
-            inputFields={inputFields.filter((f) => f !== "uuid")}
-            selectClassName="select"
-          />
+        {templateKey !== "" && (
+          <>
+            <Inputs
+              data={currentInputData}
+              onChange={onChangeInput}
+              errors={{ description: errorText }}
+              minEngineVersions={minEngineVersions}
+              inputFields={inputFields.filter((f) => f !== "uuid")}
+              selectClassName="select"
+            />
 
-          {inputFields.includes("uuid") && (
-            <button className="uuid-button" onClick={onGenerateUUID}>
-              Generate UUID
-            </button>
-          )}
+            {inputFields.includes("uuid") && (
+              <button className="uuid-button" onClick={onGenerateUUID}>
+                Generate UUID
+              </button>
+            )}
 
-          <JSONOutput json={outputJSON} />
-        </>
-      )}
+            <JSONOutput json={outputJSON} />
+          </>
+        )}
 
-      <Footer />
-    </div>
+        <div className='footer'>Copyright &copy; 2025 <a href="https://shoukelp.pages.dev/">shoukelp</a></div>
+      </div>
+    </>
   );
 }
 
