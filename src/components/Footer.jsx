@@ -9,7 +9,7 @@ const Footer = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        GitHub
+        Shoukelp
       </a>
       .
     </p>
