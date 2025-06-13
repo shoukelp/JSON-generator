@@ -24,15 +24,19 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Clone target repo (branch: pages)
-        run: |
-          git clone --single-branch --branch pages https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/shoukelp/shoukelp.git shoukelp
+      - name: Checkout target repo (branch: pages)
+        uses: actions/checkout@v4
+        with:
+          repository: shoukelp/shoukelp
+          ref: pages
+          token: ${{ secrets.TARGET_REPO_TOKEN }}
+          path: shoukelp
 
-      - name: Copy build output to target subdirectory
+      - name: Copy build output to `public/manifest-app` folder
         run: |
-          rm -rf shoukelp/cra-builds/app-v1
-          mkdir -p shoukelp/cra-builds/app-v1
-          cp -r build/* shoukelp/cra-builds/app-v1/
+          rm -rf shoukelp/public/manifest-app
+          mkdir -p shoukelp/public/manifest-app
+          cp -r build/* shoukelp/public/manifest-app/
 
       - name: Commit and push to target repo (branch: pages)
         run: |
@@ -40,5 +44,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add .
-          git commit -m "Deploy CRA build to cra-builds/app-v1 on 'pages' branch from ${{ github.repository }} @ ${{ github.sha }}" || echo "No changes to commit"
+          git commit -m "Deploy CRA build to public/manifest-app on 'pages' branch from ${{ github.repository }} @ ${{ github.sha }}" || echo "No changes to commit"
           git push origin pages
