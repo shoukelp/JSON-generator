@@ -11,17 +11,6 @@ const JSONOutput = ({ json }) => {
     setTimeout(() => setCopied(false), 1500);
   };
 
-  const handleDownload = () => {
-    const formatted = formatJSONOutput(json);
-    const blob = new Blob([formatted], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "output.json";
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
   return (
     <div style={{ marginTop: "1em", position: "relative" }}>
       <pre className="json-output">{formatJSONOutput(json)}</pre>
