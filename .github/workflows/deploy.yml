@@ -24,7 +24,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Checkout target repo (branch: pages)
+      - name: Checkout target repo
         uses: actions/checkout@v4
         with:
           repository: shoukelp/shoukelp
@@ -38,7 +38,7 @@ jobs:
           mkdir -p shoukelp/public/manifest-app
           cp -r build/* shoukelp/public/manifest-app/
 
-      - name: Commit and push to target repo (branch: pages)
+      - name: Commit and push to target repo
         run: |
           cd shoukelp
           git config user.name "github-actions"
