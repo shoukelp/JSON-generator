@@ -32,7 +32,7 @@ jobs:
           token: ${{ secrets.TARGET_REPO_TOKEN }}
           path: shoukelp
 
-      - name: Copy build output to `public/manifest-app` folder
+      - name: Copy build output to public/manifest-app folder
         run: |
           rm -rf shoukelp/public/manifest-app
           mkdir -p shoukelp/public/manifest-app
