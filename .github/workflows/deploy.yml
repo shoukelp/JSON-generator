@@ -1,0 +1,44 @@
+name: Build and Push to Another Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Clone target repo (branch: pages)
+        run: |
+          git clone --single-branch --branch pages https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/shoukelp/shoukelp.git shoukelp
+
+      - name: Copy build output to target subdirectory
+        run: |
+          rm -rf shoukelp/cra-builds/app-v1
+          mkdir -p shoukelp/cra-builds/app-v1
+          cp -r build/* shoukelp/cra-builds/app-v1/
+
+      - name: Commit and push to target repo (branch: pages)
+        run: |
+          cd shoukelp
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Deploy CRA build to cra-builds/app-v1 on 'pages' branch from ${{ github.repository }} @ ${{ github.sha }}" || echo "No changes to commit"
+          git push origin pages
