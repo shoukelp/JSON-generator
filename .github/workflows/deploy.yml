@@ -1,4 +1,4 @@
-name: Build and Push to Another Repo
+name: Build and Push to Main Repo
 
 on:
   push:
