@@ -222,7 +222,7 @@ function App() {
           </>
         )}
 
-        <div className='footer'>Copyright &copy; 2025 <a href="https://shoukelp.pages.dev/">shoukelp</a></div>
+        <Footer />
       </div>
     </>
   );

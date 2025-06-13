@@ -3,9 +3,9 @@ import React from "react";
 const Footer = () => (
   <footer className="footer">
     <p>
-      &copy; 2025 shoukelp.{" "}
+      Copyright &copy; 2025{" "}
       <a
-        href="https://github.com/shoukelp/manifest-generator"
+        href="https://shoukelp.pages.dev"
         target="_blank"
         rel="noopener noreferrer"
       >
